@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: script | Alex Suslin]]></title>
+  <link href="http://alexsuslin.github.com/blog/categories/script/atom.xml" rel="self"/>
+  <link href="http://alexsuslin.github.com/"/>
+  <updated>2012-02-06T18:27:16+03:00</updated>
+  <id>http://alexsuslin.github.com/</id>
+  <author>
+    <name><![CDATA[Alex Suslin]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Daily backup Atlassian JIRA &amp; Confluence on Windows]]></title>
+    <link href="http://alexsuslin.github.com/blog/2012/02/06/daily-backup-atlassian-jira-and-confluence-on-windows/"/>
+    <updated>2012-02-06T17:52:00+03:00</updated>
+    <id>http://alexsuslin.github.com/blog/2012/02/06/daily-backup-atlassian-jira-and-confluence-on-windows</id>
+    <content type="html"><![CDATA[<h1>Requirements:</h1>
+
+<ul>
+<li>daily jira &amp; confluence mysql database backup;</li>
+<li>daily backup of jira &amp; confluence attachments directory;</li>
+<li>backups archiving;</li>
+<li>deleting the old backups (more than 14 days);</li>
+</ul>
+
+
+<p>Please note that I had a requirements for windows machine, and I understand that linux provides more scalabale and elegant way to do that. That is a basic script that can be used as a working solution, any system administrator can do that without my help :)</p>
+
+<p>At first, let's define the variables:</p>
+
+<p>```shell
+::Path to the directory with attachments (JIRA or Confluence)
+set attachments="C:\Program Files\Atlassian\Application Data\JIRA\data"</p>
+
+<p>:: Path to the directory for daily backups
+set backup_folder=D:\Backups\Atlassian\JIRA\daily_backups</p>
+
+<p>:: Path to mysqldump.exe
+set mysqldump_path="C:\Program Files\MySQL\MySQL Server 5.5\bin\mysqldump.exe"</p>
+
+<p>:: Username of MySQL database
+set dbuser=root</p>
+
+<p>:: Password to MySQL database
+set dbpass=<change password></p>
+
+<p>:: Database that we're going to backup (JIRA or Confluence)
+set dbname=jiradb
+```</p>
+
+<p>Every backup should have a unique name. So I'm proposing to use year, month, day and time interval in that name.</p>
+
+<p><code>shell
+For /f "tokens=2-4 delims=/ " %%a in ('date /t') do (set dt=%%c-%%a-%%b)
+For /f "tokens=1-4 delims=:." %%a in ('echo %time%') do (set tm=%%a%%b%%c%%d)
+set backupdate=%1%dt%_%tm%
+set date_folder=%1%dt%
+</code></p>
+
+<p>Please feel free to name it as you wish. In my case the name pattern is : [db name].YYYY-MM-DD_tt</p>
+
+<p>date_folder variable is for a directory. I'd like to have a folder with the name like YYYY-MM-DD that will be created on a daily basis and put the proper backups in it.</p>
+
+<p>Thus, let's create the directory if it is not created yet:</p>
+
+<p><code>shell
+if exist %backup_folder%\%date_folder% GOTO NODIR
+   mkdir %backup_folder%\%date_folder%
+:NODIR
+</code></p>
+
+<p>After that, the regular backup process with the help of mysqldump and archiving with 7zip. After that we can clean the archived file (as we have archive).</p>
+
+<p><code>shell
+%mysqldump_path% --user=%dbuser% --password=%dbpass% --databases %dbname% &gt; "%backup_folder%\%date_folder%\%dbname%.%backupdate%.sql"
+"zip\7za.exe" a -tzip "%backup_folder%\%date_folder%\%dbname%.%backupdate%.zip" "%backup_folder%\%date_folder%\*.sql"
+del "%backup_folder%\%date_folder%\*.sql"
+</code></p>
+
+<p>Do not forget to archive our attachments:
+<code>shell
+"zip\7za.exe" a -tzip %backup_folder%\%date_folder%\attachments.%backupdate%.zip %attachments%
+</code></p>
+
+<p>And what we still have to do is to delete the old backups:
+<code>shell
+forfiles -p %backup_folder% -s -d -14 -c "cmd /c if @isdir == TRUE rd /s /q @path"
+</code></p>
+
+<p>That's it! Now we can use that batch script in Windows Task Scheduler and scheduled it on a daily basis.</p>
+
+<p>P.S. If the task is not working, please check:
+- Task should be launched even when the user is logged off
+- The user that is launching that task has the permissions to do that (r/w permissions)
+- Task should be launched from the directory where the script is located (optional parameter, but it is required to set the proper path)</p>
+
+<p>P.P.S. If you would like to download script, please find it here: <a href="http://dl.dropbox.com/u/135608/jira_confluence_backup_win.zip" title="Batch script to backup JIRA and Confluence.">download</a></p>
+]]></content>
+  </entry>
+  
+</feed>
