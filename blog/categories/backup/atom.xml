@@ -4,7 +4,7 @@
   <title><![CDATA[Category: backup | Alex Suslin]]></title>
   <link href="http://alexsuslin.github.com/blog/categories/backup/atom.xml" rel="self"/>
   <link href="http://alexsuslin.github.com/"/>
-  <updated>2012-02-06T18:27:16+03:00</updated>
+  <updated>2012-02-06T18:28:53+03:00</updated>
   <id>http://alexsuslin.github.com/</id>
   <author>
     <name><![CDATA[Alex Suslin]]></name>
@@ -32,7 +32,7 @@
 
 <p>At first, let's define the variables:</p>
 
-<p>```shell
+<p>```
 ::Path to the directory with attachments (JIRA or Confluence)
 set attachments="C:\Program Files\Atlassian\Application Data\JIRA\data"</p>
 
@@ -54,7 +54,7 @@ set dbname=jiradb
 
 <p>Every backup should have a unique name. So I'm proposing to use year, month, day and time interval in that name.</p>
 
-<p><code>shell
+<p><code>
 For /f "tokens=2-4 delims=/ " %%a in ('date /t') do (set dt=%%c-%%a-%%b)
 For /f "tokens=1-4 delims=:." %%a in ('echo %time%') do (set tm=%%a%%b%%c%%d)
 set backupdate=%1%dt%_%tm%
@@ -67,7 +67,7 @@ set date_folder=%1%dt%
 
 <p>Thus, let's create the directory if it is not created yet:</p>
 
-<p><code>shell
+<p><code>
 if exist %backup_folder%\%date_folder% GOTO NODIR
    mkdir %backup_folder%\%date_folder%
 :NODIR
@@ -75,19 +75,19 @@ if exist %backup_folder%\%date_folder% GOTO NODIR
 
 <p>After that, the regular backup process with the help of mysqldump and archiving with 7zip. After that we can clean the archived file (as we have archive).</p>
 
-<p><code>shell
+<p><code>
 %mysqldump_path% --user=%dbuser% --password=%dbpass% --databases %dbname% &gt; "%backup_folder%\%date_folder%\%dbname%.%backupdate%.sql"
 "zip\7za.exe" a -tzip "%backup_folder%\%date_folder%\%dbname%.%backupdate%.zip" "%backup_folder%\%date_folder%\*.sql"
 del "%backup_folder%\%date_folder%\*.sql"
 </code></p>
 
 <p>Do not forget to archive our attachments:
-<code>shell
+<code>
 "zip\7za.exe" a -tzip %backup_folder%\%date_folder%\attachments.%backupdate%.zip %attachments%
 </code></p>
 
 <p>And what we still have to do is to delete the old backups:
-<code>shell
+<code>
 forfiles -p %backup_folder% -s -d -14 -c "cmd /c if @isdir == TRUE rd /s /q @path"
 </code></p>
 
