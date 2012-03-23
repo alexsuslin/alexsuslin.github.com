@@ -2,20 +2,20 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>
-            http://alexsuslin.github.com/blog/2012/02/06/daily-backup-atlassian-jira-and-confluence-on-windows/
+            http://alexsuslin.com/blog/2012/02/06/daily-backup-atlassian-jira-and-confluence-on-windows/
         </loc>
-        <lastmod>2012-02-06T18:28:43+03:00</lastmod>
+        <lastmod>2012-02-06T18:28:31+03:00</lastmod>
     </url>
     <url>
-        <loc>http://alexsuslin.github.com/blog/2012/03/23/help-desk-with-jira-via-emails/</loc>
+        <loc>http://alexsuslin.com/blog/2012/03/23/help-desk-with-jira-via-emails/</loc>
         <lastmod>2012-03-23T14:16:42+03:00</lastmod>
     </url>
     <url>
-        <loc>http://alexsuslin.github.com/blog/archives/</loc>
+        <loc>http://alexsuslin.com/blog/archives/</loc>
         <lastmod>2012-03-23T14:16:42+03:00</lastmod>
     </url>
     <url>
-        <loc>http://alexsuslin.github.com/</loc>
+        <loc>http://alexsuslin.com/</loc>
         <lastmod>2012-03-23T14:16:42+03:00</lastmod>
     </url>
 </urlset>

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: helpdesk, | Alex Suslin]]></title>
-  <link href="http://alexsuslin.github.com/blog/categories/helpdesk-/atom.xml" rel="self"/>
-  <link href="http://alexsuslin.github.com/"/>
-  <updated>2012-03-23T14:30:21+03:00</updated>
-  <id>http://alexsuslin.github.com/</id>
+  <link href="http://alexsuslin.com/blog/categories/helpdesk-/atom.xml" rel="self"/>
+  <link href="http://alexsuslin.com/"/>
+  <updated>2012-03-24T00:57:44+03:00</updated>
+  <id>http://alexsuslin.com/</id>
   <author>
     <name><![CDATA[Alex Suslin]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Help Desk with Jira via emails]]></title>
-    <link href="http://alexsuslin.github.com/blog/2012/03/23/help-desk-with-jira-via-emails/"/>
+    <link href="http://alexsuslin.com/blog/2012/03/23/help-desk-with-jira-via-emails/"/>
     <updated>2012-03-23T13:38:00+03:00</updated>
-    <id>http://alexsuslin.github.com/blog/2012/03/23/help-desk-with-jira-via-emails</id>
+    <id>http://alexsuslin.com/blog/2012/03/23/help-desk-with-jira-via-emails</id>
     <content type="html"><![CDATA[<p>In our company we have two offices in USA and Europe. And we want to have a help desk platform and ability to create tickets via email. It is a common task and easily achievable  with the help of JIRA, but we have some points, that are not so transparent how to reach.</p>
 
 <h1>The Goals</h1>

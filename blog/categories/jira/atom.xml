@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: jira | Alex Suslin]]></title>
-  <link href="http://alexsuslin.github.com/blog/categories/jira/atom.xml" rel="self"/>
-  <link href="http://alexsuslin.github.com/"/>
-  <updated>2012-03-23T14:30:21+03:00</updated>
-  <id>http://alexsuslin.github.com/</id>
+  <link href="http://alexsuslin.com/blog/categories/jira/atom.xml" rel="self"/>
+  <link href="http://alexsuslin.com/"/>
+  <updated>2012-03-24T00:57:44+03:00</updated>
+  <id>http://alexsuslin.com/</id>
   <author>
     <name><![CDATA[Alex Suslin]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Daily backup Atlassian JIRA &amp; Confluence on Windows]]></title>
-    <link href="http://alexsuslin.github.com/blog/2012/02/06/daily-backup-atlassian-jira-and-confluence-on-windows/"/>
+    <link href="http://alexsuslin.com/blog/2012/02/06/daily-backup-atlassian-jira-and-confluence-on-windows/"/>
     <updated>2012-02-06T17:52:00+03:00</updated>
-    <id>http://alexsuslin.github.com/blog/2012/02/06/daily-backup-atlassian-jira-and-confluence-on-windows</id>
+    <id>http://alexsuslin.com/blog/2012/02/06/daily-backup-atlassian-jira-and-confluence-on-windows</id>
     <content type="html"><![CDATA[<h1>Requirements:</h1>
 
 <ul>
