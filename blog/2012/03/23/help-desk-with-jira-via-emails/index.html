@@ -1,24 +1,108 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Alex Suslin]]></title>
-  <link href="http://alexsuslin.github.com/atom.xml" rel="self"/>
-  <link href="http://alexsuslin.github.com/"/>
-  <updated>2012-03-23T14:22:43+03:00</updated>
-  <id>http://alexsuslin.github.com/</id>
-  <author>
-    <name><![CDATA[Alex Suslin]]></name>
-    
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Help Desk with Jira via emails - Alex Suslin</title>
+  <meta name="author" content="Alex Suslin">
 
   
-  <entry>
-    <title type="html"><![CDATA[Help Desk with Jira via emails]]></title>
-    <link href="http://alexsuslin.github.com/blog/2012/03/23/help-desk-with-jira-via-emails/"/>
-    <updated>2012-03-23T13:38:00+03:00</updated>
-    <id>http://alexsuslin.github.com/blog/2012/03/23/help-desk-with-jira-via-emails</id>
-    <content type="html"><![CDATA[<p>In our company we have two offices in USA and Europe. And we want to have a help desk platform and ability to create tickets via email. It is a common task and easily achievable  with the help of JIRA, but we have some points, that are not so transparent how to reach.</p>
+  <meta name="description" content="In our company we have two offices in USA and Europe. And we want to have a help desk platform and ability to create tickets via email. It is a &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://alexsuslin.github.com/blog/2012/03/23/help-desk-with-jira-via-emails">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Alex Suslin" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-28595162-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Alex Suslin</a></h1>
+  
+    <h2>I'm a well known person within myself.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:alexsuslin.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Help Desk With Jira via Emails</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-23T13:38:00+03:00" pubdate data-updated="true">Mar 23<span>rd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>In our company we have two offices in USA and Europe. And we want to have a help desk platform and ability to create tickets via email. It is a common task and easily achievable  with the help of JIRA, but we have some points, that are not so transparent how to reach.</p>
 
 <h1>The Goals</h1>
 
@@ -148,7 +232,7 @@
 </ol>
 
 
-<p><img src="http://alexsuslin.github.com/images/blog/workflow.png" alt="JIRA Workflow Design" /></p>
+<p><img src="/images/blog/workflow.png" alt="JIRA Workflow Design" /></p>
 
 <ol>
 <li>Click &#8220;Add Post Function&#8221; and select from the list &#8220;Script Post-Function&#8221;</li>
@@ -236,126 +320,206 @@
 <h2>Testing</h2>
 
 <p>Now, lets try to send email to our helpdesk mail addess. You should see something like:
-<img src="http://alexsuslin.github.com/images/blog/help-desk-assignment.png" alt="Hooray! It's working!" /></p>
+<img src="/images/blog/help-desk-assignment.png" alt="Hooray! It's working!" /></p>
 
 <hr />
 
 <p>Hope that helps someone else!</p>
-]]></content>
-  </entry>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
   
-  <entry>
-    <title type="html"><![CDATA[Daily backup Atlassian JIRA &amp; Confluence on Windows]]></title>
-    <link href="http://alexsuslin.github.com/blog/2012/02/06/daily-backup-atlassian-jira-and-confluence-on-windows/"/>
-    <updated>2012-02-06T17:52:00+03:00</updated>
-    <id>http://alexsuslin.github.com/blog/2012/02/06/daily-backup-atlassian-jira-and-confluence-on-windows</id>
-    <content type="html"><![CDATA[<h1>Requirements:</h1>
 
-<ul>
-<li>daily jira &amp; confluence mysql database backup;</li>
-<li>daily backup of jira &amp; confluence attachments directory;</li>
-<li>backups archiving;</li>
-<li>deleting the old backups (more than 14 days);</li>
-</ul>
+<span class="byline author vcard">Posted by <span class="fn">Alex Suslin</span></span>
+
+      
 
 
-<p>Please note that I had a requirements for windows machine, and I understand that linux provides more scalabale and elegant way to do that. That is a basic script that can be used as a working solution, any system administrator can do that without my help :)</p>
-
-<p>At first, let&#8217;s define the variables:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>::Path to the directory with attachments (JIRA or Confluence)
-</span><span class='line'>set attachments="C:\Program Files\Atlassian\Application Data\JIRA\data"
-</span><span class='line'>
-</span><span class='line'>:: Path to the directory for daily backups
-</span><span class='line'>set backup_folder=D:\Backups\Atlassian\JIRA\daily_backups
-</span><span class='line'>
-</span><span class='line'>:: Path to mysqldump.exe
-</span><span class='line'>set mysqldump_path="C:\Program Files\MySQL\MySQL Server 5.5\bin\mysqldump.exe"
-</span><span class='line'>
-</span><span class='line'>:: Username of MySQL database
-</span><span class='line'>set dbuser=root
-</span><span class='line'>
-</span><span class='line'>:: Password to MySQL database
-</span><span class='line'>set dbpass=&lt;change password&gt;
-</span><span class='line'>
-</span><span class='line'>:: Database that we're going to backup (JIRA or Confluence)
-</span><span class='line'>set dbname=jiradb</span></code></pre></td></tr></table></div></figure>
 
 
-<p>Every backup should have a unique name. So I&#8217;m proposing to use year, month, day and time interval in that name.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>For /f "tokens=2-4 delims=/ " %%a in ('date /t') do (set dt=%%c-%%a-%%b)
-</span><span class='line'>For /f "tokens=1-4 delims=:." %%a in ('echo %time%') do (set tm=%%a%%b%%c%%d)
-</span><span class='line'>set backupdate=%1%dt%_%tm%
-</span><span class='line'>set date_folder=%1%dt%</span></code></pre></td></tr></table></div></figure>
 
 
-<p>Please feel free to name it as you wish. In my case the name pattern is : [db name].YYYY-MM-DD_tt</p>
-
-<p>date_folder variable is for a directory. I&#8217;d like to have a folder with the name like YYYY-MM-DD that will be created on a daily basis and put the proper backups in it.</p>
-
-<p>Thus, let&#8217;s create the directory if it is not created yet:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>if exist %backup_folder%\%date_folder% GOTO NODIR
-</span><span class='line'>   mkdir %backup_folder%\%date_folder%
-</span><span class='line'>:NODIR</span></code></pre></td></tr></table></div></figure>
 
 
-<p>After that, the regular backup process with the help of mysqldump and archiving with 7zip. After that we can clean the archived file (as we have archive).</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>%mysqldump_path% --user=%dbuser% --password=%dbpass% --databases %dbname% &gt; "%backup_folder%\%date_folder%\%dbname%.%backupdate%.sql"
-</span><span class='line'>"zip\7za.exe" a -tzip "%backup_folder%\%date_folder%\%dbname%.%backupdate%.zip" "%backup_folder%\%date_folder%\*.sql"
-</span><span class='line'>del "%backup_folder%\%date_folder%\*.sql"</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Do not forget to archive our attachments:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>"zip\7za.exe" a -tzip %backup_folder%\%date_folder%\attachments.%backupdate%.zip %attachments%</span></code></pre></td></tr></table></div></figure>
-
-
-<p>And what we still have to do is to delete the old backups:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>forfiles -p %backup_folder% -s -d -14 -c "cmd /c if @isdir == TRUE rd /s /q @path"</span></code></pre></td></tr></table></div></figure>
-
-
-<p>That&#8217;s it! Now we can use that batch script in Windows Task Scheduler and scheduled it on a daily basis.</p>
-
-<p>P.S. If the task is not working, please check:
-- Task should be launched even when the user is logged off
-- The user that is launching that task has the permissions to do that (r/w permissions)
-- Task should be launched from the directory where the script is located (optional parameter, but it is required to set the proper path)</p>
-
-<p>P.P.S. If you would like to download script, please find it here: <a href="http://dl.dropbox.com/u/135608/jira_confluence_backup_win.zip" title="Batch script to backup JIRA and Confluence.">download</a></p>
-]]></content>
-  </entry>
   
-</feed>
+
+
+<time datetime="2012-03-23T13:38:00+03:00" pubdate data-updated="true">Mar 23<span>rd</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/groovy-/'>groovy,</a>, <a class='category' href='/blog/categories/helpdesk-/'>helpdesk,</a>, <a class='category' href='/blog/categories/jira-/'>jira,</a>, <a class='category' href='/blog/categories/mail/'>mail</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://alexsuslin.github.com/blog/2012/03/23/help-desk-with-jira-via-emails/" data-via="alexsuslin" data-counturl="http://alexsuslin.github.com/blog/2012/03/23/help-desk-with-jira-via-emails/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/02/06/daily-backup-atlassian-jira-and-confluence-on-windows/" title="Previous Post: Daily backup Atlassian JIRA &amp; Confluence on Windows">&laquo; Daily backup Atlassian JIRA &amp; Confluence on Windows</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/03/23/help-desk-with-jira-via-emails/">Help Desk with Jira via emails</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/06/daily-backup-atlassian-jira-and-confluence-on-windows/">Daily backup Atlassian JIRA &amp; Confluence on Windows</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>Github Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/alexsuslin">@alexsuslin</a> on Github
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'alexsuslin',
+            count: 3,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("alexsuslin", 3, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/alexsuslin" class="twitter-follow-button" data-show-count="false">Follow @alexsuslin</a>
+  
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/107359069689595610745?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Alex Suslin -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'alexsuslin-blog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://alexsuslin.github.com/blog/2012/03/23/help-desk-with-jira-via-emails/';
+        var disqus_url = 'http://alexsuslin.github.com/blog/2012/03/23/help-desk-with-jira-via-emails/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

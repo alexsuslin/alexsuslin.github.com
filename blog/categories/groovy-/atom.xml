@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: groovy, | Alex Suslin]]></title>
+  <link href="http://alexsuslin.github.com/blog/categories/groovy-/atom.xml" rel="self"/>
+  <link href="http://alexsuslin.github.com/"/>
+  <updated>2012-03-23T14:22:43+03:00</updated>
+  <id>http://alexsuslin.github.com/</id>
+  <author>
+    <name><![CDATA[Alex Suslin]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Help Desk with Jira via emails]]></title>
+    <link href="http://alexsuslin.github.com/blog/2012/03/23/help-desk-with-jira-via-emails/"/>
+    <updated>2012-03-23T13:38:00+03:00</updated>
+    <id>http://alexsuslin.github.com/blog/2012/03/23/help-desk-with-jira-via-emails</id>
+    <content type="html"><![CDATA[<p>In our company we have two offices in USA and Europe. And we want to have a help desk platform and ability to create tickets via email. It is a common task and easily achievable  with the help of JIRA, but we have some points, that are not so transparent how to reach.</p>
+
+<h1>The Goals</h1>
+
+<ol>
+<li>Single email address to send inquires to.</li>
+<li>Single project to manage all the help desk tickets for two locations.</li>
+<li>Issues should be assigned to the proper person, depends on the location of the reporter.</li>
+<li>No commercial plugins should be involved (in worst case create custom mail handler)</li>
+</ol>
+
+
+<h1>Investigation</h1>
+
+<p>I've made some investigation, what we have and what is already written and how we can use it.</p>
+
+<p>Jira already contains the basic mail handler that can be bound to the project. Unfortunately that handler is not supported several asignees (e.g. create component per location and assign task to the component lead). There is a commercial plugin <a href="https://studio.plugins.atlassian.com/wiki/display/JEMH/JEMH+Home" title="IRA Enterprise Mail Handler">JEMH</a> that supports assignment issues to component lead, however it is needed to write the component name in email somewhere (subject, body) or have different email addresses. And in our case we want to have single email address for all the tickets.</p>
+
+<p>I spent some time on it cause there is a possibility to use it for free when all the preferences are made manually through the config file (in commercial version there is a GUI for that). The other issue is that JEMH can't be installed to grab mails from the IMAP folder like the out-of-the-box JIRA mail handler.</p>
+
+<p>The idea was to create some rules on the mail server (we're using google apps) and filter USA and Europe employee's mails, assign the proper label and assign tickets to the proper components regarding the IMAP folder they are in. Ideally the combination of Jira mail handler and JMEH will work for us.</p>
+
+<p>And we're nearly agreed on the following solution:</p>
+
+<ul>
+<li>Create separate projects in JIRA for USA and Europe offices</li>
+<li>Each project will have its own Project lead</li>
+<li>Setup to JIRA mail handlers and grab emails from the proper IMAP folder</li>
+<li>Create some filters in gmail to apply the proper labels on mails.</li>
+</ul>
+
+
+<p>I've asked my question on <a href="https://answers.atlassian.com/questions/43383/email-to-project-assignee-by-component" title="Jira Answers">JIRA Answers</a>. Nobody answer with the working solution, however there were an idea about JIRA post functions. Digging in post functions the following solution was born:</p>
+
+<hr />
+
+<h1>Solution</h1>
+
+<h2>JIRA Project</h2>
+
+<ol>
+<li>As a JIRA administrator create a project HELPDESK</li>
+<li>Create 2 components "USA" and "EUROPE"</li>
+<li>Assign to each of the component component lead</li>
+</ol>
+
+
+<h2>Add POP / IMAP Mail Server</h2>
+
+<ol>
+<li>Log in as a JIRA administrator</li>
+<li>Go to Administration / System / Mail / Incoming Mail</li>
+<li>Click the button "Add POP /  IMAP mail server"</li>
+</ol>
+
+
+<table border=1>
+<tr><th>Field</th><th>Value</th>
+<tr><td>Name</td><td>Google App IMAP (or whatever you want)</td></tr>
+<tr><td>Description</td><td>Email Handler is used to create issues by email</td></tr>
+<tr><td>Service Provider</td><td>Google Apps Mail / Gmail (IMAP)</td></tr>
+<tr><td>Timeout</td><td>10000</td></tr>
+<tr><td>Username</td><td>&lt;your account name&gt;</td></tr>
+<tr><td>Password</td><td>&lt;your account password&gt;</td></tr></table>
+
+
+<pre><code>4. Test the connection and press "Add" button
+</code></pre>
+
+<h2>Mail Handlers</h2>
+
+<ol>
+<li>Press the button "Add incoming mail handler"</li>
+<li>First Screen:</li>
+</ol>
+
+
+<table border=1>
+<tr><th>Field</th><th>Value</th>
+<tr><td>Name</td><td>Help Desk</td></tr>
+<tr><td>Server</td><td>Google App IMAP</td></tr>
+<tr><td>Delay</td><td>1</td></tr>
+<tr><td>Handler</td><td>Create a new issue or add a coment</td></tr>
+<tr><td>Folder Name</td><td>&lt;leave blank&gt;</td></tr></table>
+
+
+<ol>
+<li>Second Screen:</li>
+</ol>
+
+
+<table border=1>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td>Project</td><td>HELPDESK (or whatever project you are going to use)</td></tr>
+<tr><td>Issue Type</td><td>Task</td></tr>
+<tr><td>Bulk</td><td>Ignore the email and do nothing</td></tr>
+<tr><td>Forward Email</td><td>helpdesk@company.com</td></tr>
+<tr><td>Create User</td><td>False</td></tr>
+<tr><td>Default Reporter</td><td>username (put someone in charge)</td></tr>
+<tr><td>Notify User</td><td>unchecked</td></tr>
+<tr><td>CC Assignee</td><td>unchecked</td></tr>
+<tr><td>CC Watchers</td><td>checked</td></tr></table>
+
+
+<ol>
+<li>Test and save</li>
+</ol>
+
+
+<h2>Groups</h2>
+
+<ol>
+<li>Create two groups of users: "usa-employee" and "europe-employee"</li>
+<li>Assign all the employee to these two groups</li>
+</ol>
+
+
+<h2>Script Runner Plugin</h2>
+
+<p>As a JIRA administrator install the following plugin <a href="https://plugins.atlassian.com/plugins/com.onresolve.jira.groovy.groovyrunner">Jira Script Runner</a></p>
+
+<h2>Workflow</h2>
+
+<ol>
+<li>As a JIRA administrator go to Administration / Issues / Workflow</li>
+<li>Copy your current workflow and change the name to "help-deksk-workflow"</li>
+<li>Go to Design view of that workflow and the gear icon, selecting "View Post Functions" from the menu</li>
+</ol>
+
+
+<p><img src="/images/blog/workflow.png" alt="JIRA Workflow Design" /></p>
+
+<ol>
+<li>Click "Add Post Function" and select from the list "Script Post-Function"</li>
+<li>In the Script file path field insert the path to your groovy script (server path), please see below for the script source of my script <strong>helpdesk.groovy</strong>:</li>
+</ol>
+
+
+<p>```
+import com.atlassian.jira.ComponentManager
+import com.atlassian.crowd.embedded.api.User
+import com.atlassian.jira.issue.MutableIssue
+import com.atlassian.jira.project.Project
+import com.atlassian.jira.bc.project.component.ProjectComponent
+import com.atlassian.jira.util.collect.MapBuilder
+import webwork.dispatcher.ActionResult
+import com.atlassian.core.ofbiz.CoreFactory
+import com.atlassian.jira.action.ActionNames
+import com.atlassian.jira.security.groups.GroupManager
+ComponentManager componentManager = ComponentManager.getInstance()
+User remoteUser = componentManager.getJiraAuthenticationContext().getLoggedInUser()
+MutableIssue issue = issue
+User currentAsignee = issue.getReporter()
+GroupManager groupManager = ComponentManager.getComponentInstanceOfType(GroupManager.class)
+Project project = issue.getProjectObject()
+ProjectComponent component = null
+if (groupManager.isUserInGroup(currentAsignee.getName(), "EUROPE"))
+  component = componentManager.getProjectComponentManager().findByComponentName(project.getId(), "EUROPE")
+else if (groupManager.isUserInGroup(currentAsignee.getName(), "USA"))
+  component = componentManager.getProjectComponentManager().findByComponentName(project.getId(), "USA")
+if(component != null)
+{
+  issue.setAssigneeId(component.getLead())
+  issue.setComponents([component.getGenericValue()])</p>
+
+<p>  Map&lt;String, Object> actionParams = MapBuilder.build("issue", issue.getGenericValue(), "issueObject", issue, "remoteUser", remoteUser, "dispatchEvent", Boolean.FALSE);
+  ActionResult aResult = CoreFactory.getActionDispatcher().execute(ActionNames.ISSUE_UPDATE, actionParams);
+}
+```
+Code is obvious. It's a groovy script (to be honest, never dealt with it before and java itself). It's just trying to resolve the reporter group and if the reporter in USA group, the task is updated with proper component and component lead. The same for the EUROPE group.</p>
+
+<ol>
+<li>Save the post function and the workflow.</li>
+<li>Go to Workflow schemes and create the new one "help-desk-scheme" and assign the "help-desk-workflow" workflow for lets say just tasks.</li>
+</ol>
+
+
+<h2>The Final One</h2>
+
+<ol>
+<li>Now go to project "HELPDESK" / Administer Project</li>
+<li>Open "Workflows" tab. Action / Select a scheme and choose our "help-desk-shcema" as a primary schema for the project.</li>
+<li>Here we're!</li>
+</ol>
+
+
+<h2>Testing</h2>
+
+<p>Now, lets try to send email to our helpdesk mail addess. You should see something like:
+<img src="/images/blog/help-desk-assignment.png" alt="Hooray! It's working!" /></p>
+
+<hr />
+
+<p>Hope that helps someone else!</p>
+]]></content>
+  </entry>
+  
+</feed>
