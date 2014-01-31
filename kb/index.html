@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>King's Bounty: Legions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+	<div class="page-header">
+	  <h1>King's Bounty: Legions</h1>
+	</div>
+
+	<ul class="nav nav-tabs">
+	  <li class="active"><a href="#resources" data-toggle="tab">Ресурсы</a></li>
+	  <li><a href="#creatures" data-toggle="tab">Войска</a></li>
+	  <li><a href="#" data-toggle="tab">Что-то еще</a></li>
+	</ul>
+
+	<div class="tab-content" style="margin-top: 20px;">
+	  
+	  <div class="tab-pane active" id="resources">
+	  	<div class="panel panel-default">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Обычные</h3>
+		  </div>
+		  <div class="panel-body" id="simple_res"></div>
+		</div>
+
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Особые</h3>
+		  </div>
+		  <div class="panel-body" id="rare_res"></div>
+		</div>
+
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Редкие</h3>
+		  </div>
+		  <div class="panel-body" id="unique_res">
+		  </div>
+		</div>	
+	  </div>
+	  
+	  <div class="tab-pane" id="creatures">
+	  	<div id="kingdom_creatures"></div>
+	  	
+	  </div>
+	  <div class="tab-pane" id="messages">...</div>	  
+	</div>
+ 
+
+	<!-- Modal Box -->
+	<div class="modal fade" id="more_box" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  	<div class="modal-dialog">
+		    <div class="modal-content" id="more_body">
+
+		    </div>
+	  	</div>
+	</div>
+	<!-- End of Modal Box -->
+
+   <!-- BEGIN: Underscore Templates Definition. -->
+    <script type="text/template" class="template_res">
+ 		<table>
+ 			<tr>
+ 				<% _.each( rc.resItems, function( resItem ){ %>
+ 
+                <td>
+ 					<a href="#" onclick="modal_content('<%= resItem.name %>')" class="thumbnail resource"><img class="img-rounded" alt="<%= resItem.name %>" src="<%= resItem.path %>" data-toggle="modal" data-target="#more_box"/></a>				
+                </td>
+ 
+            <% }); %>
+ 			</tr>
+ 		</table>
+    </script>
+
+    <script type="text/template" class="template_creatures">
+		<div class="panel panel-default">
+	      <div class="panel-heading"><%- rc.title %></div>
+	      <div class="panel-body">
+	        <p>Some default panel content here.</p>
+	      </div>
+
+	      <!-- Table -->
+	      <table class="table">
+	        <thead>
+	          <tr>
+	            <th>Картинка</th>
+	            <th>Название</th>
+	            <th>Тип</th>
+	            <th>Фракция</th>
+	          </tr>
+	        </thead>
+	        <tbody>
+ 				<% _.each( rc.items, function( item ){ %>
+	 	          <tr>
+		            <td><img class="img-rounded" alt="<%= item.name %>" src="<%= item.file_path %>" /></td>
+		            <td><%- item.name %></td>
+		            <td><%- item.type %></td>
+		            <td><%-item.fraction %></td>
+		          </tr>                
+            <% }); %>	     
+
+	        </tbody>
+	      </table>
+	    </div>    
+    </script>
+
+  	<script type="text/template" class="template_more_box_res">
+  		<div class="modal-header">
+    		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>    		
+    		<h4 class="modal-title" id="myModalLabel"><%- rc.name %> (<%- rc.type %>)</h4>
+  		</div>
+  		<div class="modal-body">
+	  	<div class="row">	  	
+		  <div class="col-sm-2 col-md-2"><img class="img-rounded" alt="<%= rc.name %>" src="<%= rc.path %>" /></div>
+		  <div class="col-sm-10 col-md-10"><%- rc.description %></div>
+		  <div class="col-sm-12 col-md-12">&nbsp;</div>
+		</div>
+			<div class="panel panel-default">			  
+			  <div class="panel-heading">Может выпасть из следующих существ:</div>
+			  <div class="panel-body">
+			  <div class="row" style="margin: 0 1px">
+ 							<% _.each( rc.drop, function( item ){ %>
+                 			
+
+  <div class="col-xs-12 col-md-2">
+    <a href="#" class="thumbnail"><img class="img-rounded" alt="<%= item.name %>" src="<%= item.file_path %>"/></a>
+  </div>
+ 
+   				            <% }); %>	
+   				            </div>	  		
+			  </div>
+			</div>
+
+    	</div>
+  		<div class="modal-footer">
+  		Цена: <b><%- rc.price %></b>
+  		</div>
+  	</script>
+  	<!-- END: Underscore Template Definition. -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="http://underscorejs.org/underscore-min.js"></script>
+    <script type="text/javascript" src="js/kb.js"></script>
+  </body>
+</html>
