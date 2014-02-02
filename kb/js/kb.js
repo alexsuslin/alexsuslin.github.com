@@ -92,12 +92,16 @@
  }
  	);
 
+var resources_path="img/res/";
+var creatures_path="img/creatures/";
+
+//function getFilePath()
 
  //РЕСУРСЫ
 resources = [           
 	{
         name: "Склянка алхимика",
-        path: "img/res/склянка_алхимика.jpg",
+        path: resources_path+"Alchemists_Jar.jpg",
         type: "обычный",
         description: "Можно заполучить в качестве трофея у алхимиков, пиратов и болотных змей.",
         receipt: null,
@@ -105,68 +109,68 @@ resources = [
     },
     {
         name: "Малая печать магии",
-        path: "img/res/малая_печать_магии.jpg",
+        path: resources_path+"Lesser_Magic_Seal.jpg",
         type: "обычный",
         receipt: null
     },
     {
         name: "Льняная ткань",
-        path: "img/res/льняная_ткань.jpg",
+        path: resources_path+"Linen_Fabric.jpg",
         type: "обычный",
         receipt: null
     },
     {
         name: "Лесные травы",
-        path: "img/res/лесные_травы.jpg",
+        path: resources_path+"Forest_Herbs.jpg",
         type: "Можно заполучить в качестве трофея у крестьян, терний-охотников и алхимиков.",
         receipt: null,
         price: 50
     },
     {
         name: "Мех",
-        path: "img/res/мех.jpg",
+        path: resources_path+"Furs.jpg",
         type: "обычный",
         receipt: null
     },
     {
         name: "Волшебный порошок",
-        path: "img/res/волшебный_порошок.jpg",
+        path: resources_path+"Magic_Powder.jpg",
         type: "обычный",
         receipt: null
     }, 
     {
         name: "Пергамент",
-        path: "img/res/пергамент.jpg",
+        path: resources_path+"Parchment.jpg",
         type: "обычный",
         receipt: null
     }, 
     {
         name: "Железо",
-        path: "img/res/железо.jpg",
+        path: resources_path+"Iron_Bar.jpg",
         type: "обычный",
         receipt: null
     }, 
     {
         name: "Рваная шкура",
-        path: "img/res/рваная_шкура.jpg",
+        path: resources_path+"Tough_Hide.jpg",
         type: "обычный",
         receipt: null
     }, 
     {
         name: "Грубая нить",
-        path: "img/res/грубая_нить.jpg",
+        path: resources_path+"Torn_Hide.jpg",
         type: "обычный",
         receipt: null
     }, 
     {
         name: "Дерево",
-        path: "img/res/дерево.jpg",
+        path: resources_path+"Wood.jpg",
         type: "обычный",
         receipt: null
     },
 	{
         name: "Шелковая ткань",
-        path: "img/res/шелковая_ткань.jpg",
+        path: resources_path+"Silk_Fabric.jpg",
         type: "особый",
         receipt: [
         	{
@@ -178,7 +182,7 @@ resources = [
     },
     {
         name: "Рунная печать",
-        path: "img/res/рунная_печать.jpg",
+        path: resources_path+"Runic_Seal.jpg",
         type: "особый",
         receipt: [
         	{
@@ -190,7 +194,7 @@ resources = [
     },
     {
         name: "Водостойкая краска",
-        path: "img/res/водостойкая_краска.jpg",
+        path: resources_path+"Water_Resistant_Paint.jpg",
         type: "особый",
         receipt: [
         	{
@@ -202,7 +206,7 @@ resources = [
     },
     {
         name: "Серебряный слиток",
-        path: "img/res/серебряный_слиток.jpg",
+        path: resources_path+"Silver_Ingot.jpg",
         type: "особый",
         description: "Создается в лаборатории и иногда встречается в качестве трофея у особых и легендарых существ",
         price: 150,
@@ -216,7 +220,7 @@ resources = [
     },
     {
         name: "Магический пергамент",
-        path: "img/res/магический_пергамент.jpg",
+        path: resources_path+"Magical_Parchment.jpg",
         type: "особый",
         receipt: [
         	{
@@ -228,7 +232,7 @@ resources = [
     },
     {
         name: "Сильная кислота",
-        path: "img/res/сильная_кислота.jpg",
+        path: resources_path+"Strong_Acid.jpg",
         type: "особый",
         receipt: [
         	{
@@ -240,7 +244,7 @@ resources = [
     }, 
     {
         name: "Живое дерево",
-        path: "img/res/живое_дерево.jpg",
+        path: resources_path+"Living_Tree.jpg",
         type: "особый",
         receipt: [
         	{
@@ -252,7 +256,7 @@ resources = [
     }, 
     {
         name: "Звездная пыль",
-        path: "img/res/звездная_пыль.jpg",
+        path: resources_path+"Stardust.jpg",
         type: "особый",
         receipt: [
         	{
@@ -264,7 +268,7 @@ resources = [
     }, 
     {
         name: "Шерстяное полотно",
-        path: "img/res/шерстяное_полотно.jpg",
+        path: resources_path+"Wool_Fabric.jpg",
         type: "особый",
         receipt: [
         	{
@@ -276,7 +280,7 @@ resources = [
     }, 
     {
         name: "Крепкая шкура",
-        path: "img/res/крепкая_шкура.jpg",
+        path: resources_path+"Torn_Hide.jpg",
         type: "особый",
         receipt: [
         	{
@@ -288,7 +292,7 @@ resources = [
     }, 
     {
         name: "Тонкая нить",
-        path: "img/res/тонкая_нить.jpg",
+        path: resources_path+"Thin_Thread.jpg",
         type: "особый",
         receipt: [
         	{
@@ -300,55 +304,55 @@ resources = [
     },
     {
         name: "Эликсир трансформации",
-        path: "img/res/эликсир_трансформации.jpg",
+        path: resources_path+"Transformation_Elixir.jpg",
         type: "редкий",
         receipt: null
     },
     {
         name: "Рунический свиток",
-        path: "img/res/рунический_свиток.jpg",
+        path: resources_path+"Runic_Scroll.jpg",
         type: "редкий",
         receipt: null
     },
     {
         name: "Песок времени",
-        path: "img/res/песок_времени.jpg",
+        path: resources_path+"Sands_Of_Time.jpg",
         type: "редкий",
         receipt: null
     },
     {
         name: "Звездная ткань",
-        path: "img/res/звездная_ткань.jpg",
+        path: resources_path+"Starfabric.jpg",
         type: "редкий",
         receipt: null
     },
     {
         name: "Зачарованная нить",
-        path: "img/res/зачарованная_нить.jpg",
+        path: resources_path+"Enchanted_Thread.jpg",
         type: "редкий",
         receipt: null
     },    
     {
         name: "Живая настойка",
-        path: "img/res/живая_настойка.jpg",
+        path: resources_path+"Potion_of_Life.jpg",
         type: "редкий",
         receipt: null
     },
     {
         name: "Волшебная шкура",
-        path: "img/res/волшебная_шкура.jpg",
+        path: resources_path+"Magic_Hide.jpg",
         type: "редкий",
         receipt: null
     }, 
     {
         name: "Печать_чародея",
-        path: "img/res/печать_чародея.jpg",
+        path: resources_path+"Sorcerers_Seal.jpg",
         type: "редкий",
         receipt: null
     }, 
     {
         name: "Золотой слиток",
-        path: "img/res/золотой_слиток.jpg",
+        path: resources_path+"Gold_Ingot.jpg",
         type: "редкий",
         receipt: null
     } 
@@ -358,77 +362,77 @@ resources = [
 creatures = [
 	{
 		name: "Чемпион",
-		file_path: "img/creatures/Чемпион.jpg",
+		file_path: creatures_path+"Champion.jpg",
 		type: "легендарный",
 		fraction: "Королевство",
 		drop: [resources[resources_enum.Silver_Ingot], resources[resources_enum.Starfabric], resources[resources_enum.Wood]]
 	},
 	{
 		name: "Архимаг",
-		file_path: "img/creatures/Архимаг.jpg",
+		file_path: creatures_path+"Archmage.jpg",
 		type: "легендарный",
 		fraction: "Королевство",
 		drop: [resources[resources_enum.Magical_Parchment], resources[resources_enum.Parchment], resources[resources_enum.Sands_Of_Time]]
 	},
 		{
 		name: "Паладин",
-		file_path: "img/creatures/Паладин.jpg",
+		file_path: creatures_path+"Paladin.jpg",
 		type: "легендарный",
 		fraction: "Королевство",
 		drop: [resources[resources_enum.Gold_Ingot], resources[resources_enum.Iron_Bar], resources[resources_enum.Silver_Ingot]]
 	},
 		{
 		name: "Инквизитор",
-		file_path: "img/creatures/Инквизитор.jpg",
+		file_path: creatures_path+"Inquisitor.jpg",
 		type: "особый",
 		fraction: "Королевство",
 		drop: [resources[resources_enum.Lesser_Magic_Seal], resources[resources_enum.Parchment], resources[resources_enum.Stardust]]
 	},
 		{
 		name: "Морской волк",
-		file_path: "img/creatures/Морской волк.jpg",
+		file_path: creatures_path+"Sea_Wolf.jpg",
 		type: "особый",
 		fraction: "Королевство",
 		drop: [resources[resources_enum.Coarse_Thread], resources[resources_enum.Iron_Bar], resources[resources_enum.Silk_Fabric]]
 	},
 		{
 		name: "Рыцарь",
-		file_path: "img/creatures/Рыцарь.jpg",
+		file_path: creatures_path+"Knight.jpg",
 		type: "особый",
 		fraction: "Королевство",
 		drop: [resources[resources_enum.Iron_Bar],resources[resources_enum.Silver_Ingot],resources[resources_enum.Torn_Hide]]
 	},
 		{
 		name: "Пушкарь",
-		file_path: "img/creatures/Пушкарь.jpg",
+		file_path: creatures_path+"Gunner.jpg",
 		type: "особый",
 		fraction: "Королевство",
 		drop: [resources[resources_enum.Alchemists_Jar],resources[resources_enum.Magic_Powder],resources[resources_enum.Thin_Thread]]
 	},
 		{
 		name: "Чернокнижник",
-		file_path: "img/creatures/Чернокнижник.jpg",
+		file_path: creatures_path+"Blackmage.jpg",
 		type: "особый",
 		fraction: "Королевство",
 		drop: [resources[resources_enum.Forest_Herbs],resources[resources_enum.Magical_Parchment],resources[resources_enum.Runic_Seal]]
 	},
 		{
 		name: "Крестьянин",
-		file_path: "img/creatures/Крестьянин.jpg",
+		file_path: creatures_path+"Peasant.jpg",
 		type: "рядовой",
 		fraction: "Королевство",
 		drop: [resources[resources_enum.Coarse_Thread],resources[resources_enum.Forest_Herbs],resources[resources_enum.Wood]]
 	},
 		{
 		name: "Лучник",
-		file_path: "img/creatures/Лучник.jpg",
+		file_path: creatures_path+"Archer.jpg",
 		type: "рядовой",
 		fraction: "Королевство",
 		drop: [resources[resources_enum.Coarse_Thread],resources[resources_enum.Linen_Fabric],resources[resources_enum.Parchment]]
 	},
 		{
 		name: "Пират",
-		file_path: "img/creatures/Пират.jpg",
+		file_path: creatures_path+"Pirate.jpg",
 		type: "рядовой",
 		fraction: "Королевство",
 		drop: [resources[resources_enum.Alchemists_Jar],resources[resources_enum.Coarse_Thread],resources[resources_enum.Linen_Fabric],resources[resources_enum.Magic_Powder]]
@@ -436,28 +440,28 @@ creatures = [
 	},
 		{
 		name: "Бродяга",
-		file_path: "img/creatures/Бродяга.jpg",
+		file_path: creatures_path+"Vagabond.jpg",
 		type: "рядовой",
 		fraction: "Королевство",
 		drop: [resources[resources_enum.Furs],resources[resources_enum.Iron_Bar],resources[resources_enum.Torn_Hide]]
 	},
 		{
 		name: "Пилигрим",
-		file_path: "img/creatures/Пилигрим.jpg",
+		file_path: creatures_path+"Pilgrim.jpg",
 		type: "рядовой",
 		fraction: "Королевство",
 		drop: [resources[resources_enum.Lesser_Magic_Seal],resources[resources_enum.Magic_Powder],resources[resources_enum.Parchment]]
 	},
 		{
 		name: "Мечник",
-		file_path: "img/creatures/Мечник.jpg",
+		file_path: creatures_path+"Swordsman.jpg",
 		type: "рядовой",
 		fraction: "Королевство",
 		drop: [resources[resources_enum.Iron_Bar],resources[resources_enum.Lesser_Magic_Seal]]
 	},
 		{
 		name: "Ассасин",
-		file_path: "img/creatures/Ассасин.jpg",
+		file_path: creatures_path+"Assassin.jpg",
 		type: "легендарный",
 		fraction: "Хаос",
 		drop: [resources[resources_enum.Parchment],resources[resources_enum.Silk_Fabric],resources[resources_enum.Transformation_Elixir]]
@@ -465,7 +469,7 @@ creatures = [
 	},
 		{
 		name: "Демонолог",
-		file_path: "img/creatures/Демонолог.jpg",
+		file_path: creatures_path+"Demonologist.jpg",
 		type: "легендарный",
 		fraction: "Хаос",
 		drop: [resources[resources_enum.Linen_Fabric],resources[resources_enum.Runic_Seal],resources[resources_enum.Sorcerers_Seal]]
@@ -473,7 +477,7 @@ creatures = [
 	},
 		{
 		name: "Темный грифон",
-		file_path: "img/creatures/Темный грифон.jpg",
+		file_path: creatures_path+"Dark_Griffin.jpg",
 		type: "легендарный",
 		fraction: "Хаос",
 		drop: [resources[resources_enum.Furs],resources[resources_enum.Magic_Hide],resources[resources_enum.Tough_Hide],resources[resources_enum.Wool_Fabric]]
@@ -481,7 +485,7 @@ creatures = [
 	},
 		{
 		name: "Герцог тьмы",
-		file_path: "img/creatures/Герцог тьмы.jpg",
+		file_path: creatures_path+"Duke_of_Darkness.jpg",
 		type: "легендарный",
 		fraction: "Хаос",
 		drop: [resources[resources_enum.Lesser_Magic_Seal],resources[resources_enum.Strong_Acid],resources[resources_enum.Starfabric]]
@@ -489,7 +493,7 @@ creatures = [
 	},
 		{
 		name: "Огненный паук",
-		file_path: "img/creatures/Огненный паук.jpg",
+		file_path: creatures_path+"Fiery_Spider.jpg",
 		type: "особый",
 		fraction: "Хаос",
 		drop: [resources[resources_enum.Furs],resources[resources_enum.Thin_Thread],resources[resources_enum.Torn_Hide]]
@@ -497,7 +501,7 @@ creatures = [
 	},
 		{
 		name: "Черный единорог",
-		file_path: "img/creatures/Черный единорог.jpg",
+		file_path: creatures_path+"Black_Unicorn.jpg",
 		type: "особый",
 		fraction: "Хаос",
 		drop: [resources[resources_enum.Forest_Herbs],resources[resources_enum.Lesser_Magic_Seal],resources[resources_enum.Strong_Acid]]
@@ -505,7 +509,7 @@ creatures = [
 	},
 		{
 		name: "Изобретатель",
-		file_path: "img/creatures/Изобретатель.jpg",
+		file_path: creatures_path+"Inventor.jpg",
 		type: "особый",
 		fraction: "Хаос",
 		drop: [resources[resources_enum.Iron_Bar],resources[resources_enum.Parchment],resources[resources_enum.Water_Resistant_Paint]]
@@ -513,7 +517,7 @@ creatures = [
 	},
 		{
 		name: "Некромант",
-		file_path: "img/creatures/Некромант.jpg",
+		file_path: creatures_path+"Necromancer.jpg",
 		type: "особый",
 		fraction: "Хаос",
 		drop: [resources[resources_enum.Linen_Fabric],resources[resources_enum.Magical_Parchment],resources[resources_enum.Runic_Seal]]
@@ -521,7 +525,7 @@ creatures = [
 	},
 		{
 		name: "Злобоглаз",
-		file_path: "img/creatures/Злобоглаз.jpg",
+		file_path: creatures_path+"Evil_Eye.jpg",
 		type: "особый",
 		fraction: "Хаос",
 		drop: [resources[resources_enum.Lesser_Magic_Seal],resources[resources_enum.Magic_Powder],resources[resources_enum.Stardust],resources[resources_enum.Tough_Hide]]
@@ -529,14 +533,14 @@ creatures = [
 	},
 		{
 		name: "Пещерный паук",
-		file_path: "img/creatures/Пещерный паук.jpg",
+		file_path: creatures_path+"Cave_Spider.jpg",
 		type: "рядовой",
 		fraction: "Хаос",
 		drop: [resources[resources_enum.Alchemists_Jar],resources[resources_enum.Coarse_Thread],resources[resources_enum.Furs]]
 	},
 		{
 		name: "Дикий медведь",
-		file_path: "img/creatures/Дикий медведь.jpg",
+		file_path: creatures_path+"Possessed_Bear.jpg",
 		type: "рядовой",
 		fraction: "Хаос",
 		drop: [resources[resources_enum.Furs],resources[resources_enum.Torn_Hide]]
@@ -544,7 +548,7 @@ creatures = [
 	},
 		{
 		name: "Звероглаз",
-		file_path: "img/creatures/Звероглаз.jpg",
+		file_path: creatures_path+"Eyebeast.jpg",
 		type: "рядовой",
 		fraction: "Хаос",
 		drop: [resources[resources_enum.Magic_Powder],resources[resources_enum.Torn_Hide]]
@@ -552,7 +556,7 @@ creatures = [
 	},
 		{
 		name: "Призрак",
-		file_path: "img/creatures/Призрак.jpg",
+		file_path: creatures_path+"Ghost.jpg",
 		type: "рядовой",
 		fraction: "Хаос",
 		drop: [resources[resources_enum.Lesser_Magic_Seal],resources[resources_enum.Linen_Fabric],resources[resources_enum.Magic_Powder]]
@@ -560,7 +564,7 @@ creatures = [
 	},
 		{
 		name: "Зомби",
-		file_path: "img/creatures/Зомби.jpg",
+		file_path: creatures_path+"Zombie.jpg",
 		type: "рядовой",
 		fraction: "Хаос",
 		drop: [resources[resources_enum.Iron_Bar],resources[resources_enum.Parchment],resources[resources_enum.Wood]]
@@ -568,7 +572,7 @@ creatures = [
 	},
 		{
 		name: "Алхимик",
-		file_path: "img/creatures/Алхимик.jpg",
+		file_path: creatures_path+"Alchemist.jpg",
 		type: "рядовой",
 		fraction: "Хаос",
 		drop: [resources[resources_enum.Alchemists_Jar],resources[resources_enum.Coarse_Thread],resources[resources_enum.Forest_Herbs]]
@@ -576,7 +580,7 @@ creatures = [
 	},
 		{
 		name: "Горгул-шаман",
-		file_path: "img/creatures/Горгул-шаман.jpg",
+		file_path: creatures_path+"Gargoyle_Shaman.jpg",
 		type: "легендарный",
 		fraction: "Древние",
 		drop: [resources[resources_enum.Forest_Herbs],resources[resources_enum.Runic_Scroll],resources[resources_enum.Runic_Seal]]
@@ -584,7 +588,7 @@ creatures = [
 	},
 		{
 		name: "Древний энт",
-		file_path: "img/creatures/Древний энт.jpg",
+		file_path: creatures_path+"Ancient_Ent.jpg",
 		type: "легендарный",
 		fraction: "Древние",
 		drop: [resources[resources_enum.Living_Tree],resources[resources_enum.Potion_of_Life],resources[resources_enum.Wood]]
@@ -592,14 +596,14 @@ creatures = [
 	},
 		{
 		name: "Дриада",
-		file_path: "img/creatures/Дриада.jpg",
+		file_path: creatures_path+"Dryad.jpg",
 		type: "легендарный",
 		fraction: "Древние",
 		drop: [resources[resources_enum.Enchanted_Thread],resources[resources_enum.Stardust],resources[resources_enum.Thin_Thread]]
 	},
 		{
 		name: "Седогривый грифон",
-		file_path: "img/creatures/Седогривый грифон.jpg",
+		file_path: creatures_path+"Greymaned_Griffin.jpg",
 		type: "легендарный",
 		fraction: "Древние",
 		drop: [resources[resources_enum.Linen_Fabric],resources[resources_enum.Silver_Ingot],resources[resources_enum.Sands_Of_Time]]
@@ -607,7 +611,7 @@ creatures = [
 	},
 		{
 		name: "Озерная фея",
-		file_path: "img/creatures/Озерная фея.jpg",
+		file_path: creatures_path+"Lake_Fairy.jpg",
 		type: "особый",
 		fraction: "Древние",
 		drop: [resources[resources_enum.Magic_Powder],resources[resources_enum.Magical_Parchment],resources[resources_enum.Strong_Acid]]
@@ -615,7 +619,7 @@ creatures = [
 	},
 		{
 		name: "Горгул-охотник",
-		file_path: "img/creatures/Горгул-охотник.jpg",
+		file_path: creatures_path+"Gargoyle_Hunter.jpg",
 		type: "особый",
 		fraction: "Древние",
 		drop: [resources[resources_enum.Living_Tree],resources[resources_enum.Torn_Hide],resources[resources_enum.Wood]]
@@ -623,7 +627,7 @@ creatures = [
 	},
 		{
 		name: "Хранитель леса",
-		file_path: "img/creatures/Хранитель леса.jpg",
+		file_path: creatures_path+"Forest_Guardian.jpg",
 		type: "особый",
 		fraction: "Древние",
 		drop: [resources[resources_enum.Lesser_Magic_Seal],resources[resources_enum.Parchment],resources[resources_enum.Stardust]]
@@ -631,7 +635,7 @@ creatures = [
 	},
 		{
 		name: "Следопыт",
-		file_path: "img/creatures/Следопыт.jpg",
+		file_path: creatures_path+"Ranger.jpg",
 		type: "особый",
 		fraction: "Древние",
 		drop: [resources[resources_enum.Alchemists_Jar],resources[resources_enum.Coarse_Thread],resources[resources_enum.Wool_Fabric]]
@@ -639,7 +643,7 @@ creatures = [
 	},
 		{
 		name: "Ночной волк",
-		file_path: "img/creatures/Ночной волк.jpg",
+		file_path: creatures_path+"Nigh_Wolf.jpg",
 		type: "особый",
 		fraction: "Древние",
 		drop: [resources[resources_enum.Linen_Fabric],resources[resources_enum.Furs],resources[resources_enum.Water_Resistant_Paint]]
@@ -647,7 +651,7 @@ creatures = [
 	},
 		{
 		name: "Молодая фея",
-		file_path: "img/creatures/Молодая фея.jpg",
+		file_path: creatures_path+"Young_Fairy.jpg",
 		type: "рядовой",
 		fraction: "Древние",
 		drop: [resources[resources_enum.Forest_Herbs],resources[resources_enum.Linen_Fabric],resources[resources_enum.Magic_Powder]]
@@ -655,7 +659,7 @@ creatures = [
 	},
 		{
 		name: "Горгул-ученик",
-		file_path: "img/creatures/Горгул-ученик.jpg",
+		file_path: creatures_path+"Gargoyle_Trainee.jpg",
 		type: "рядовой",
 		fraction: "Древние",
 		drop: [resources[resources_enum.Iron_Bar],resources[resources_enum.Lesser_Magic_Seal],resources[resources_enum.Wood]]
@@ -663,7 +667,7 @@ creatures = [
 	},
 		{
 		name: "Единорог",
-		file_path: "img/creatures/Единорог.jpg",
+		file_path: creatures_path+"Unicorn.jpg",
 		type: "рядовой",
 		fraction: "Древние",
 		drop: [resources[resources_enum.Forest_Herbs],resources[resources_enum.Furs],resources[resources_enum.Magic_Powder]]
@@ -671,7 +675,7 @@ creatures = [
 	},
 		{
 		name: "Друид",
-		file_path: "img/creatures/Друид.jpg",
+		file_path: creatures_path+"Druid.jpg",
 		type: "рядовой",
 		fraction: "Древние",
 		drop: [resources[resources_enum.Coarse_Thread],resources[resources_enum.Lesser_Magic_Seal],resources[resources_enum.Parchment]]
@@ -679,7 +683,7 @@ creatures = [
 	},
 		{
 		name: "Циклоп",
-		file_path: "img/creatures/Циклоп.jpg",
+		file_path: creatures_path+"Cyclops.jpg",
 		type: "легендарный",
 		fraction: "Звери",
 		drop: [resources[resources_enum.Iron_Bar],resources[resources_enum.Runic_Seal],resources[resources_enum.Transformation_Elixir]]
@@ -687,7 +691,7 @@ creatures = [
 	},
 		{
 		name: "Изумрудный дракон",
-		file_path: "img/creatures/Изумрудный дракон.jpg",
+		file_path: creatures_path+"Emerald_Dragon.jpg",
 		type: "легендарный",
 		fraction: "Звери",
 		drop: [resources[resources_enum.Magic_Hide],resources[resources_enum.Torn_Hide],resources[resources_enum.Tough_Hide]]
@@ -695,14 +699,14 @@ creatures = [
 	},
 		{
 		name: "Тирекс",
-		file_path: "img/creatures/Тирекс.jpg",
+		file_path: creatures_path+"TRex.jpg",
 		type: "легендарный",
 		fraction: "Звери",
 		drop: [resources[resources_enum.Forest_Herbs],resources[resources_enum.Wool_Fabric],resources[resources_enum.Potion_of_Life]]
 	},
 		{
 		name: "Королевская терния",
-		file_path: "img/creatures/Королевская терния.jpg",
+		file_path: creatures_path+"Royal_Thorn.jpg",
 		type: "особый",
 		fraction: "Звери",
 		drop: [resources[resources_enum.Living_Tree],resources[resources_enum.Magic_Powder],resources[resources_enum.Wood]]
@@ -710,7 +714,7 @@ creatures = [
 	},
 		{
 		name: "Древняя змея",
-		file_path: "img/creatures/Древняя змея.jpg",
+		file_path: creatures_path+"Ancient_Serpent.jpg",
 		type: "особый",
 		fraction: "Звери",
 		drop: [resources[resources_enum.Alchemists_Jar],resources[resources_enum.Lesser_Magic_Seal],resources[resources_enum.Tough_Hide]]
@@ -718,7 +722,7 @@ creatures = [
 	},
 		{
 		name: "Морской дьявол",
-		file_path: "img/creatures/Морской дьявол.jpg",
+		file_path: creatures_path+"Sea_Devil.jpg",
 		type: "особый",
 		fraction: "Звери",
 		drop: [resources[resources_enum.Coarse_Thread],resources[resources_enum.Iron_Bar],resources[resources_enum.Water_Resistant_Paint]]
@@ -726,7 +730,7 @@ creatures = [
 	},
 		{
 		name: "Северный медведь",
-		file_path: "img/creatures/Северный медведь.jpg",
+		file_path: creatures_path+"Polar_Bear.jpg",
 		type: "особый",
 		fraction: "Звери",
 		drop: [resources[resources_enum.Furs],resources[resources_enum.Lesser_Magic_Seal],resources[resources_enum.Tough_Hide]]
@@ -734,7 +738,7 @@ creatures = [
 	},
 		{
 		name: "Терния-охотник",
-		file_path: "img/creatures/Терния-охотник.jpg",
+		file_path: creatures_path+"Thorn_Hunter.jpg",
 		type: "рядовой",
 		fraction: "Звери",
 		drop: [resources[resources_enum.Forest_Herbs],resources[resources_enum.Wood],resources[resources_enum.Alchemists_Jar]]
@@ -742,7 +746,7 @@ creatures = [
 	},
 		{
 		name: "Озерный драконид",
-		file_path: "img/creatures/Озерный драконид.jpg",
+		file_path: creatures_path+"Lake_Draconid.jpg",
 		type: "рядовой",
 		fraction: "Звери",
 		drop: [resources[resources_enum.Coarse_Thread],resources[resources_enum.Magic_Powder],resources[resources_enum.Torn_Hide]]
@@ -750,7 +754,7 @@ creatures = [
 	},
 		{
 		name: "Бронтор",
-		file_path: "img/creatures/Бронтор.jpg",
+		file_path: creatures_path+"Brontaur.jpg",
 		type: "рядовой",
 		fraction: "Звери",
 		drop: [resources[resources_enum.Forest_Herbs],resources[resources_enum.Torn_Hide]]
@@ -758,7 +762,7 @@ creatures = [
 	},
 		{
 		name: "Болотная змея",
-		file_path: "img/creatures/Болотная змея.jpg",
+		file_path: creatures_path+"Swamp_Serpent.jpg",
 		type: "рядовой",
 		fraction: "Звери",
 		drop: [resources[resources_enum.Alchemists_Jar],resources[resources_enum.Torn_Hide]]
