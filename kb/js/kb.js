@@ -111,18 +111,23 @@ resources = [
         name: "Малая печать магии",
         path: resources_path+"Lesser_Magic_Seal.jpg",
         type: "обычный",
-        receipt: null
+        description: "Можно заполучить в качестве трофея у призраков, пилигримов и мечников",
+        receipt: null,
+        price: 50
     },
     {
         name: "Льняная ткань",
         path: resources_path+"Linen_Fabric.jpg",
         type: "обычный",
-        receipt: null
+        receipt: null,
+        description: "Можно заполучить в качестве трофея у лучников, пиратов и призраков",
+        price: 50
     },
     {
         name: "Лесные травы",
         path: resources_path+"Forest_Herbs.jpg",
-        type: "Можно заполучить в качестве трофея у крестьян, терний-охотников и алхимиков.",
+        description: "Можно заполучить в качестве трофея у крестьян, терний-охотников и алхимиков.",
+        type: "обычный",
         receipt: null,
         price: 50
     },
@@ -158,7 +163,7 @@ resources = [
     }, 
     {
         name: "Грубая нить",
-        path: resources_path+"Torn_Hide.jpg",
+        path: resources_path+"Coarse_Thread.jpg",
         type: "обычный",
         receipt: null
     }, 
