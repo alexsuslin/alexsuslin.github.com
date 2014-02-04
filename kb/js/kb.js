@@ -786,6 +786,10 @@ function modal_content(resItem){
     var dialog_Data = _.template(
 	$( "script.template_more_box_res" ).html() );
     $( "#more_body" ).html( dialog_Data( item ) );	
+	$('a.creature > img').each(function(){
+		$(this).tooltip({html:true, placement: "bottom", title: this.alt});
+	});
+
 }
 
 			    
