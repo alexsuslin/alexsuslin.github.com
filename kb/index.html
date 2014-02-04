@@ -4,8 +4,8 @@
     <title>King's Bounty: Legions</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -21,7 +21,7 @@
 	<ul class="nav nav-tabs">
 	  <li class="active"><a href="#resources" data-toggle="tab">Ресурсы</a></li>
 <!-- 	  <li><a href="#creatures" data-toggle="tab">Войска</a></li>-->
-	  <li> <a href="http://vk.com/kblpage"><i class="icon-share"> Поддержка</i></a></li> 
+	  <li> <a href="http://vk.com/kblpage"><i class="icon-share"></i> Поддержка</a></li> 
 	</ul>
 
 	<div class="tab-content" style="margin-top: 20px;">
@@ -122,18 +122,17 @@
   		</div>
   		<div class="modal-body">
 	  	<div class="row">	  	
-		  <div class="col-sm-2 col-md-2"><img class="img-rounded" alt="<%= rc.name %>" src="<%= rc.path %>" /></div>
-		  <div class="col-sm-10 col-md-10"><%- rc.description %></div>
-		  <div class="col-sm-12 col-md-12">&nbsp;</div>
+		  <div class="col-md-2"><img class="img-rounded" alt="<%= rc.name %>" src="<%= rc.path %>" /></div>
+		  <div class="col-md-9"><%- rc.description %></div>		  			  
 		</div>
 			<div class="panel panel-default">			  
 			  <div class="panel-heading">Может выпасть из следующих существ:</div>
 			  <div class="panel-body">
-			  <div class="row" style="margin: 0 1px">
+			  <div class="row">
  							<% _.each( rc.drop, function( item ){ %>
                  			
 
-  <div class="col-xs-3 col-md-3">
+  <div>
     <a href="#" class="thumbnail creature"><img class="img-rounded" alt="<%= item.name %>" src="<%= item.file_path %>"/></a>
   </div>
  
@@ -150,9 +149,9 @@
   	<!-- END: Underscore Template Definition. -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="http://underscorejs.org/underscore-min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
     <script type="text/javascript" src="js/kb.js"></script>
   </body>
 </html>
