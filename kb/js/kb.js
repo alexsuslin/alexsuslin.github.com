@@ -135,48 +135,64 @@ resources = [
         name: "Мех",
         path: resources_path+"Furs.jpg",
         type: "обычный",
-        receipt: null
+        receipt: null,
+        price: 50,
+        description: "Можно заполучить в качестве трофея у диких медведей, пещерных пауков и бродяг"
     },
     {
         name: "Волшебный порошок",
         path: resources_path+"Magic_Powder.jpg",
         type: "обычный",
-        receipt: null
+        receipt: null,
+        price: 50,
+        description: "Можно заполучить в качестве трофея у пилигримов, звероглазов и речных драконоидов"
     }, 
     {
         name: "Пергамент",
         path: resources_path+"Parchment.jpg",
         type: "обычный",
-        receipt: null
+        receipt: null,
+        price: 50,
+        description: "Можно заполучить в качестве трофея у друидов, пилигримов и лучников"
     }, 
     {
         name: "Железо",
         path: resources_path+"Iron_Bar.jpg",
         type: "обычный",
-        receipt: null
+        receipt: null,
+        price: 50,
+        description: "Можно заполучить в качестве трофея у мечников, зомби и бродяг"
     }, 
     {
         name: "Рваная шкура",
         path: resources_path+"Tough_Hide.jpg",
         type: "обычный",
-        receipt: null
+        receipt: null,
+        price: 50,
+        description: "Можно заполучить в качестве трофея у бродяг, диких медведей и бронторов"
     }, 
     {
         name: "Грубая нить",
         path: resources_path+"Coarse_Thread.jpg",
         type: "обычный",
-        receipt: null
+        receipt: null,
+        price: 50,
+        description: "Можно заполучить в качестве трофея у пещерных пауков, лучников и крестьян"
     }, 
     {
         name: "Дерево",
         path: resources_path+"Wood.jpg",
         type: "обычный",
-        receipt: null
+        receipt: null,
+        price: 50,
+        description: "Можно заполучить в качестве трофея у зомби, крестьян и терний-охотников"
     },
 	{
         name: "Шелковая ткань",
         path: resources_path+"Silk_Fabric.jpg",
         type: "особый",
+        price: 150,
+        description: "Создается в лаборатории и иногда встречается в качестве трофея у особых и легендарых существ",
         receipt: [
         	{
         		name: "",
@@ -189,6 +205,8 @@ resources = [
         name: "Рунная печать",
         path: resources_path+"Runic_Seal.jpg",
         type: "особый",
+        price: 150,
+        description: "Создается в лаборатории и иногда встречается в качестве трофея у особых и легендарых существ",
         receipt: [
         	{
         		name: "",
@@ -201,6 +219,8 @@ resources = [
         name: "Водостойкая краска",
         path: resources_path+"Water_Resistant_Paint.jpg",
         type: "особый",
+        price: 150,
+        description: "Создается в лаборатории и иногда встречается в качестве трофея у особых и легендарых существ",
         receipt: [
         	{
         		name: "",
@@ -227,6 +247,8 @@ resources = [
         name: "Магический пергамент",
         path: resources_path+"Magical_Parchment.jpg",
         type: "особый",
+        price: 150,
+        description: "Создается в лаборатории и иногда встречается в качестве трофея у особых и легендарых существ",
         receipt: [
         	{
         		name: "",
@@ -239,6 +261,8 @@ resources = [
         name: "Сильная кислота",
         path: resources_path+"Strong_Acid.jpg",
         type: "особый",
+        price: 150,
+        description: "Создается в лаборатории и иногда встречается в качестве трофея у особых и легендарых существ",
         receipt: [
         	{
         		name: "",
@@ -251,6 +275,8 @@ resources = [
         name: "Живое дерево",
         path: resources_path+"Living_Tree.jpg",
         type: "особый",
+        price: 150,
+        description: "Создается в лаборатории и иногда встречается в качестве трофея у особых и легендарых существ",
         receipt: [
         	{
         		name: "",
@@ -263,6 +289,8 @@ resources = [
         name: "Звездная пыль",
         path: resources_path+"Stardust.jpg",
         type: "особый",
+        price: 150,
+        description: "Создается в лаборатории и иногда встречается в качестве трофея у особых и легендарых существ",
         receipt: [
         	{
         		name: "",
@@ -275,6 +303,8 @@ resources = [
         name: "Шерстяное полотно",
         path: resources_path+"Wool_Fabric.jpg",
         type: "особый",
+        price: 150,
+        description: "Создается в лаборатории и иногда встречается в качестве трофея у особых и легендарых существ",
         receipt: [
         	{
         		name: "",
@@ -287,6 +317,8 @@ resources = [
         name: "Крепкая шкура",
         path: resources_path+"Torn_Hide.jpg",
         type: "особый",
+        price: 150,
+        description: "Создается в лаборатории и иногда встречается в качестве трофея у особых и легендарых существ",
         receipt: [
         	{
         		name: "",
@@ -299,6 +331,8 @@ resources = [
         name: "Тонкая нить",
         path: resources_path+"Thin_Thread.jpg",
         type: "особый",
+        price: 150,
+        description: "Создается в лаборатории и иногда встречается в качестве трофея у особых и легендарых существ",
         receipt: [
         	{
         		name: "",
@@ -311,53 +345,71 @@ resources = [
         name: "Эликсир трансформации",
         path: resources_path+"Transformation_Elixir.jpg",
         type: "редкий",
+        price: 500,
+        description: "Редко можно заполучить в качестве трофея у ассасинов",
         receipt: null
     },
     {
         name: "Рунический свиток",
         path: resources_path+"Runic_Scroll.jpg",
         type: "редкий",
+        price: 500,
+        description: "Редко можно заполучить в качестве трофея у горгула-шамана",
         receipt: null
     },
     {
         name: "Песок времени",
         path: resources_path+"Sands_Of_Time.jpg",
         type: "редкий",
+        price: 500,
+        description: "Редко можно заполучить в качестве трофея у архимагов",
         receipt: null
     },
     {
         name: "Звездная ткань",
         path: resources_path+"Starfabric.jpg",
         type: "редкий",
+        price: 500,
+        description: "Редко можно заполучить в качестве трофея у чемпионов",
         receipt: null
     },
     {
         name: "Зачарованная нить",
         path: resources_path+"Enchanted_Thread.jpg",
         type: "редкий",
+        price: 500,
+        description: "Редко можно заполучить в качестве трофея у дриад",
         receipt: null
     },    
     {
         name: "Живая настойка",
         path: resources_path+"Potion_of_Life.jpg",
         type: "редкий",
+        price: 500,
+        description: "Редко можно заполучить в качестве трофея у Древних энтов",
         receipt: null
     },
     {
         name: "Волшебная шкура",
         path: resources_path+"Magic_Hide.jpg",
         type: "редкий",
+        price: 500,
+        description: "Редко можно заполучить в качестве трофея у темных грифонов",
         receipt: null
     }, 
     {
         name: "Печать_чародея",
         path: resources_path+"Sorcerers_Seal.jpg",
         type: "редкий",
+        price: 500,
+        description: "Редко можно заполучить в качестве трофея у демонологов",
         receipt: null
     }, 
     {
         name: "Золотой слиток",
         path: resources_path+"Gold_Ingot.jpg",
+        price: 500,
+        description: "Редко можно заполучить в качестве трофея у паладинов",
         type: "редкий",
         receipt: null
     } 
