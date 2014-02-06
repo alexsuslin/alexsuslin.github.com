@@ -92,6 +92,7 @@
  }
  	);
 
+receipts = { resources: {}}; // should be initialized before use
 var resources_path="img/res/";
 var creatures_path="img/creatures/";
 
@@ -193,13 +194,7 @@ resources = [
         type: "особый",
         price: 150,
         description: "Создается в лаборатории и иногда встречается в качестве трофея у особых и легендарых существ",
-        receipt: [
-        	{
-        		name: "",
-        		path: "",
-        		count: 0
-        	},
-        ]
+        receipt: receipts.resources.Silk_Fabric
     },
     {
         name: "Рунная печать",
@@ -207,13 +202,7 @@ resources = [
         type: "особый",
         price: 150,
         description: "Создается в лаборатории и иногда встречается в качестве трофея у особых и легендарых существ",
-        receipt: [
-        	{
-        		name: "",
-        		path: "",
-        		count: 0
-        	},
-        ]
+        receipt: receipts.resources.Runic_Seal
     },
     {
         name: "Водостойкая краска",
@@ -221,13 +210,7 @@ resources = [
         type: "особый",
         price: 150,
         description: "Создается в лаборатории и иногда встречается в качестве трофея у особых и легендарых существ",
-        receipt: [
-        	{
-        		name: "",
-        		path: "",
-        		count: 0
-        	},
-        ]
+        receipt: receipts.resources.Water_Resistant_Paint
     },
     {
         name: "Серебряный слиток",
@@ -235,13 +218,7 @@ resources = [
         type: "особый",
         description: "Создается в лаборатории и иногда встречается в качестве трофея у особых и легендарых существ",
         price: 150,
-        receipt: [
-        	{
-        		name: "",
-        		path: "",
-        		count: 0
-        	},
-        ]
+        receipt: receipts.resources.Silver_Ingot
     },
     {
         name: "Магический пергамент",
@@ -249,13 +226,7 @@ resources = [
         type: "особый",
         price: 150,
         description: "Создается в лаборатории и иногда встречается в качестве трофея у особых и легендарых существ",
-        receipt: [
-        	{
-        		name: "",
-        		path: "",
-        		count: 0
-        	},
-        ]
+        receipt: receipts.resources.Magical_Parchment
     },
     {
         name: "Сильная кислота",
@@ -263,13 +234,7 @@ resources = [
         type: "особый",
         price: 150,
         description: "Создается в лаборатории и иногда встречается в качестве трофея у особых и легендарых существ",
-        receipt: [
-        	{
-        		name: "",
-        		path: "",
-        		count: 0
-        	},
-        ]
+        receipt: receipts.resources.Strong_Acid
     }, 
     {
         name: "Живое дерево",
@@ -277,13 +242,7 @@ resources = [
         type: "особый",
         price: 150,
         description: "Создается в лаборатории и иногда встречается в качестве трофея у особых и легендарых существ",
-        receipt: [
-        	{
-        		name: "",
-        		path: "",
-        		count: 0
-        	},
-        ]
+        receipt: receipts.resources.Living_Tree
     }, 
     {
         name: "Звездная пыль",
@@ -291,13 +250,7 @@ resources = [
         type: "особый",
         price: 150,
         description: "Создается в лаборатории и иногда встречается в качестве трофея у особых и легендарых существ",
-        receipt: [
-        	{
-        		name: "",
-        		path: "",
-        		count: 0
-        	},
-        ]
+        receipt: receipts.resources.Stardust
     }, 
     {
         name: "Шерстяное полотно",
@@ -305,13 +258,7 @@ resources = [
         type: "особый",
         price: 150,
         description: "Создается в лаборатории и иногда встречается в качестве трофея у особых и легендарых существ",
-        receipt: [
-        	{
-        		name: "",
-        		path: "",
-        		count: 0
-        	},
-        ]
+        receipt: receipts.resources.Wool_Fabric
     }, 
     {
         name: "Крепкая шкура",
@@ -319,13 +266,7 @@ resources = [
         type: "особый",
         price: 150,
         description: "Создается в лаборатории и иногда встречается в качестве трофея у особых и легендарых существ",
-        receipt: [
-        	{
-        		name: "",
-        		path: "",
-        		count: 0
-        	},
-        ]
+        receipt: receipts.resources.Torn_Hide
     }, 
     {
         name: "Тонкая нить",
@@ -413,7 +354,67 @@ resources = [
         type: "редкий",
         receipt: null
     } 
-]                                        
+]   
+
+receipts = {
+	resources : {
+		Silk_Fabric : [
+        	{ resource: resources[resources_enum.Linen_Fabric], count: 2 },
+        	{ resource: resources[resources_enum.Lesser_Magic_Seal], count: 2 },
+        	{ resource: resources[resources_enum.Parchment], count: 3 },
+        ],
+        Runic_Seal : [
+        	{ resource: resources[resources_enum.Lesser_Magic_Seal], count: 2},
+        	{ resource: resources[resources_enum.Magic_Powder], count: 2 },
+        	{ resource: resources[resources_enum.Parchment], count: 3 },
+        ],
+        Water_Resistant_Paint : [
+        	{ resource: resources[resources_enum.Forest_Herbs], count: 2 },
+        	{ resource: resources[resources_enum.Lesser_Magic_Seal], count: 3 },
+        	{ resource: resources[resources_enum.Parchment], count: 3 },
+        ],
+        Silver_Ingot : [
+        	{ resource: resources[resources_enum.Iron_Bar], count: 2 },
+        	{ resource: resources[resources_enum.Alchemists_Jar], count: 2 },
+        	{ resource: resources[resources_enum.Lesser_Magic_Seal], count: 3 },
+        ],
+        Magical_Parchment : [
+        	{ resource: resources[resources_enum.Parchment], count: 2 },
+        	{ resource: resources[resources_enum.Forest_Herbs], count: 2 },
+        	{ resource: resources[resources_enum.Lesser_Magic_Seal], count: 3 },
+        ],
+        Strong_Acid : [
+        	{ resource: resources[resources_enum.Alchemists_Jar], count: 2 },
+        	{ resource: resources[resources_enum.Parchment], count: 2 },
+        	{ resource: resources[resources_enum.Forest_Herbs], count: 3 },
+        ],
+        Living_Tree : [
+        	{ resource: resources[resources_enum.Wood], count: 2 },
+        	{ resource: resources[resources_enum.Lesser_Magic_Seal], count: 2 },
+        	{ resource: resources[resources_enum.Forest_Herbs], count: 3 },
+        ],
+        Stardust : [
+        	{ resource: resources[resources_enum.Magic_Powder], count: 2 },
+        	{ resource: resources[resources_enum.Lesser_Magic_Seal], count: 2 },
+        	{ resource: resources[resources_enum.Parchment], count: 3 },
+        ],
+        Wool_Fabric : [
+        	{ resource: resources[resources_enum.Furs], count: 2 },
+        	{ resource: resources[resources_enum.Linen_Fabric], count: 2 },
+        	{ resource: resources[resources_enum.Forest_Herbs], count: 3 },
+        ],
+        Torn_Hide : [
+        	{ resource: resources[resources_enum.Tough_Hide], count: 2 },
+        	{ resource: resources[resources_enum.Alchemists_Jar], count: 2 },
+        	{ resource: resources[resources_enum.Forest_Herbs], count: 3 },
+        ],
+        Thin_Thread : [
+        	{ resource: resources[resources_enum.Coarse_Thread], count: 2 },
+        	{ resource: resources[resources_enum.Linen_Fabric], count: 2 },
+        	{ resource: resources[resources_enum.Forest_Herbs], count: 3 },
+        ],
+	}
+}                                     
 
 
 creatures = [
@@ -834,12 +835,16 @@ function modal_content(resItem){
 	if(item == 'undefined' || item == null)
 		alert("modal_content, item is null or undefined");
 	item.drop = _.filter(creatures, function(mob) { return _.contains(_.pluck(mob.drop, "name"), item.name); });
+	item.receipt = receipts.resources[item.path.replace(/.*\/(\w+)\.jpg/gi, "$1")];
 	
     var dialog_Data = _.template(
 	$( "script.template_more_box_res" ).html() );
     $( "#more_body" ).html( dialog_Data( item ) );	
 	$('a.creature > img').each(function(){
 		$(this).tooltip({html:true, placement: "bottom", title: this.alt});
+	});
+	$('a.resource > img').each(function(){
+		$(this).tooltip({html:false, placement: "bottom", title: this.alt});
 	});
 
 }
