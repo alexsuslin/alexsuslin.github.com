@@ -237,24 +237,23 @@
 				</div>																
 			</div>
 		</div>
-		<div class="row space15">
-			<div class="col-md-2"><b>Способности</b></div>
-			<div class="col-md-10">
+		<div class="row">
+			<div class="col-md-12">
 			<% _.each(rc.abilities, function(item){ %>
 				<div class="row space10">
 					<div class="col-md-12"><img src="<%=item.path%>"/> <%-item.name %></div>
 				</div>
 				<div class="row">
-					<div class="col-md-4">урон</div>
-					<div class="col-md-8"><%-item.min_damage %>-<%-item.max_damage%></div>
+					<div class="col-md-3">урон</div>
+					<div class="col-md-9"><%-item.min_damage %>-<%-item.max_damage%></div>
 				</div>
 				<div class="row">
-					<div class="col-md-4">дальнобойность</div>
-					<div class="col-md-8"><%-item.range %></div>
+					<div class="col-md-3">дальнобойность</div>
+					<div class="col-md-9"><%-item.range %></div>
 				</div>
 				<div class="row">
-					<div class="col-md-4">перезарядка</div>
-					<div class="col-md-8"><%-item.cooldown %></div>
+					<div class="col-md-3">перезарядка</div>
+					<div class="col-md-9"><%-item.cooldown %></div>
 				</div>
 				<div class="row">
 					<div class="col-md-12"><i><%-item.description %></i></div>
