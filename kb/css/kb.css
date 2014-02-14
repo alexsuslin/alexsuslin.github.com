@@ -28,3 +28,11 @@ div.imageSub div.label {
 	z-index: 3;
 	color: white;
 }
+
+div.space15{
+	margin-top: 15px;
+}
+
+div.space10{
+	margin-top: 10px;
+}

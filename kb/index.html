@@ -69,6 +69,7 @@
 	</div>
 	<!-- End of Modal Box -->
 
+
    <!-- BEGIN: Underscore Templates Definition. -->
     <script type="text/template" class="template_res">
  		<table>
@@ -136,7 +137,7 @@
 	         				<div class="row">
 	         			<% } %>			
 								<div class="col-md-3">
-									<a href="#" class="thumbnail creature"><img class="img-rounded" alt="<%= item.name %>" src="<%= item.file_path %>"/></a>
+									<a href="#"  onclick="modal_creature('<%= item.name %>')" class="thumbnail creature" data-toggle="modal" data-target="#more_box"><img class="img-rounded" alt="<%= item.name %>" src="<%= item.file_path %>"/></a>
 								</div>
 						<% if(index % 4 == 3 || index == rc.drop.length - 1) { %>
 							</div>
@@ -168,11 +169,111 @@
 		Цена: <b><%- rc.price %></b>
 	</div>
 </script>
+
+
+<script type="text/template" class="template_more_box_creature">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>    		
+		<h4 class="modal-title" id="myModalLabel"><%- rc.name %> (<%- rc.fraction %>)</h4>
+	</div>
+	
+	<div class="modal-body">
+		<div class="row">
+			<div class="col-md-3">
+				<img class="img-rounded" alt="<%= rc.name %>" src="<%= rc.file_path %>"/>
+			     <div>
+			      <ul class="pagination pagination-sg">
+			        <li><a href="#" onclick="substractone('creature_level a');">«</a></li>
+			        <li id="creature_level"><a>1</a></li>
+			        <li><a href="#" onclick="addone('creature_level a');">»</a></li>
+			      </ul>
+			    </div>				
+			</div>
+			<div class="col-md-9">
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-4">Лидерство</div>
+					<div class="col-md-6"><%-rc.leadership%></div>
+				</div>
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-4">Здоровье</div>
+					<div class="col-md-6"><%-rc.health%></div>
+				</div>
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-4">Урон</div>
+					<div class="col-md-6"><%-rc.min_damage%>-<%-rc.max_damage%></div>
+				</div>
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-4">Дальнобойность</div>
+					<div class="col-md-6"><%-rc.range%></div>
+				</div>	
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-4">Aтака</div>
+					<div class="col-md-6"><%-rc.attack%></div>
+				</div>	
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-4">Защита</div>
+					<div class="col-md-6"><%-rc.defense%></div>
+				</div>	
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-4">Инициатива</div>
+					<div class="col-md-6"><%-rc.initiative%></div>
+				</div>									
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-4">Скорость</div>
+					<div class="col-md-6"><%-rc.speed%></div>
+				</div>								
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-4">Шанс крит. удара</div>
+					<div class="col-md-6"><%-rc.cc%>%</div>
+				</div>																
+			</div>
+		</div>
+		<div class="row space15">
+			<div class="col-md-2"><b>Способности</b></div>
+			<div class="col-md-10">
+			<% _.each(rc.abilities, function(item){ %>
+				<div class="row space10">
+					<div class="col-md-12"><img src="<%=item.path%>"/> <%-item.name %></div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">урон</div>
+					<div class="col-md-8"><%-item.min_damage %>-<%-item.max_damage%></div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">дальнобойность</div>
+					<div class="col-md-8"><%-item.range %></div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">перезарядка</div>
+					<div class="col-md-8"><%-item.cooldown %></div>
+				</div>
+				<div class="row">
+					<div class="col-md-12"><i><%-item.description %></i></div>
+				</div>					
+			<% }); %>
+			</div>
+		</div>			
+	</div>
+
+	<div class="modal-footer">		
+		<p class="text-justify"><%- rc.description %></p>
+	</div>
+
+</script>
   	<!-- END: Underscore Template Definition. -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
     <script type="text/javascript" src="js/kb.js"></script>
   </body>

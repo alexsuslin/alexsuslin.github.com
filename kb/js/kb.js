@@ -92,11 +92,43 @@
  }
  	);
 
+  abilities_enum = Object.freeze(
+    {
+        Archers_Shot:0,
+        Ice_Arrow:1,
+    }
+);
+
 receipts = { resources: {}}; // should be initialized before use
+abilities = { };
 var resources_path="img/res/";
 var creatures_path="img/creatures/";
+var abilities_path="img/abilities/";
 
 //function getFilePath()
+
+// СПОСОБНОСТИ
+abilities = [
+    {
+        name: "Выстрел лучника",
+        path: abilities_path + "Archers_Shot.png",
+        min_damage: 40,
+        max_damage: 60,
+        range: "5+",
+        cooldown: 0,
+        description: "Атака стрелой, наносящая 40-60 ед. урона (алхимического)"
+    },
+    {
+        name: "Ледяная стрела",
+        path: abilities_path + "Ice_Arrow.png",
+        min_damage: 20,
+        max_damage: 40,
+        range: "5+",
+        cooldown: 4,
+        description: "Наносит рядовому противнику 20-40 ед. урона (алхимического) и снижает его скорость на 1. Длительность: 1 ход(а)"
+    },    
+];
+
 
  //РЕСУРСЫ
 resources = [           
@@ -483,9 +515,24 @@ creatures = [
 	},
 		{
 		name: "Лучник",
+        fraction: "Королевство",
 		file_path: creatures_path+"Archer.jpg",
 		type: "рядовой",
-		fraction: "Королевство",
+        leadership: 35,
+        health: 250,
+        min_damage: 40,
+        max_damage: 60,
+        range: "5+",
+        attack: 80,
+        defense: 60,
+        initiative: 2,
+        speed: 2,
+        cc: 8,
+        physical_res: 0,
+        alchemical_res: 10,
+        magic_res: 10,
+        abilities:[abilities[abilities_enum.Archers_Shot], abilities[abilities_enum.Ice_Arrow]],
+        description: "Ружья и арбалеты гномьей работы стали преданием вместе со своими творцами, луки же остались. Искусство лучника не из простых, зато его выстрелы самые точные. Опытный лучник - серьезный враг, ведь в его арсенале не только очень мощные, но и отравленные стрелы.",
 		drop: [resources[resources_enum.Coarse_Thread],resources[resources_enum.Linen_Fabric],resources[resources_enum.Parchment]]
 	},
 		{
@@ -831,7 +878,7 @@ creatures = [
 
 
 function modal_content(resItem){
-	var item = _.find(resources, function(i){ return i.name == resItem; })
+	var item = _.find(resources, function(i){ return i.name == resItem; });
 	if(item == 'undefined' || item == null)
 		alert("modal_content, item is null or undefined");
 	item.drop = _.filter(creatures, function(mob) { return _.contains(_.pluck(mob.drop, "name"), item.name); });
@@ -839,14 +886,25 @@ function modal_content(resItem){
 	
     var dialog_Data = _.template(
 	$( "script.template_more_box_res" ).html() );
-    $( "#more_body" ).html( dialog_Data( item ) );	
-	$('a.creature > img').each(function(){
+    $( "#more_body" ).empty().append( dialog_Data( item ) );	
+	
+    $('a.creature > img').each(function(){
 		$(this).tooltip({html:true, placement: "bottom", title: this.alt});
 	});
 	$('a.resource > img').each(function(){
 		$(this).tooltip({html:false, placement: "bottom", title: this.alt});
 	});
 
+}
+
+function modal_creature(itemName){
+    var item_cr = _.find(creatures, function(i) {return i.name == itemName; });
+    if(item_cr == 'undefined' || item_cr == null)
+        alert("modal_creature, item_cr is null or undefined");
+
+    var dialog_DataCreature = _.template(
+    $( "script.template_more_box_creature" ).html() );
+    $( "#more_body" ).empty().append( dialog_DataCreature( item_cr ) );  
 }
 
 			    
@@ -910,4 +968,20 @@ $( document ).ready(function() {
 	});
 });  
  
- 
+
+function substractone(name)
+{
+    var item = $('#'+name);
+    if(item.text() == '1')
+        return;
+    item.text(item.text()*1-1);
+}
+
+function addone(name)
+{
+    var item = $('#'+name);
+    if(item.text() == '15')
+        return;
+    item.text(item.text()*1+1);
+}
+
