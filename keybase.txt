@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/alexsuslin
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://alexsuslin.com
+  * I am alexsuslin (https://keybase.io/alexsuslin) on keybase.
+  * I have a public key ASAhz-AJbg6nz-w__tE_v-Os81UrHK_YZUbJfNM62Whs1go
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "012021cfe0096e0ea7cfec3ffed13fbfe3acf3552b1cafd86546c97cd33ad9686cd60a",
+      "host": "keybase.io",
+      "kid": "012021cfe0096e0ea7cfec3ffed13fbfe3acf3552b1cafd86546c97cd33ad9686cd60a",
+      "uid": "d2e2d376e7f26a6ba11ab343bdf3b019",
+      "username": "alexsuslin"
+    },
+    "merkle_root": {
+      "ctime": 1617206658,
+      "hash": "5218a082de630d413e34164979c7bb5225ca9ecf8ff2c402247c78581106053159e9bb403d188ce0ddca0f815c7479260eb3277427274096b2cfa882f27358a4",
+      "hash_meta": "791374132893c16e0187fa6ee027fab31d8711d763e35fdc0e02377123a796c2",
+      "seqno": 19515984
+    },
+    "service": {
+      "entropy": "NNgwzr69cBBBhTX3RlhH29yA",
+      "hostname": "alexsuslin.com",
+      "protocol": "http:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.6.0"
+  },
+  "ctime": 1617206677,
+  "expire_in": 504576000,
+  "prev": "9bdc36e1d33c84a44ca4236854c8a16da31608f684c78739213b13c062a1daba",
+  "seqno": 14,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgIc/gCW4Op8/sP/7RP7/jrPNVKxyv2GVGyXzTOtlobNYKp3BheWxvYWTESpcCDsQgm9w24dM8hKRMpCNoVMihbaMWCPaEx4c5ITsTwGKh2rrEILO9UtUxlyqiubsJiEUl92TCloBCNAVbT8QvbWUx9wRgAgHCo3NpZ8RANSYQrW78xnfKTCUKbrdfeR4XaPkLAxbf3wyPblQU71nAxoghPzr/PniSYsm987Im7MVJhMxgH4fvw+lgkJdXBahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIEb5nWv7OMlfrDo26nNs6nxEFNra+JNuOMHwic4YpikFo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/alexsuslin
+
+==================================================================
